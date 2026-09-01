@@ -1,0 +1,27 @@
+# OS & Editor Files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Environment Variables & Secrets
+.env
+.env*.local
+.env.production
+.env.development
+
+# Build & Deploy
+.vercel
+node_modules/
+dist/
+build/
+
+# Reference & Inspection Assets
+inspect_crops/
+UI Designs/
+Primavex_Project_Documents/
+*.pdf
+IMG_*.PNG
+Contact us.png
+Primavex logo.png
