@@ -142,11 +142,10 @@ p {
   color: var(--neutral-light);
 }
 
-/* Eyebrow Label (No em dashes, clean uppercase typography) */
+/* Eyebrow Label (Clean uppercase typography without decorative dash) */
 .eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
   font-family: var(--font-sans);
   font-size: 11px;
   font-weight: 700;
@@ -156,19 +155,8 @@ p {
   margin-bottom: 14px;
 }
 
-.eyebrow::before {
-  content: '';
-  display: inline-block;
-  width: 20px;
-  height: 1.5px;
-  background-color: var(--primary-gold);
-}
-
 .eyebrow-light {
   color: var(--soft-gold);
-}
-.eyebrow-light::before {
-  background-color: var(--soft-gold);
 }
 
 /* Containers */
@@ -860,6 +848,7 @@ p {
   display: flex;
   align-items: center;
   gap: 12px;
+  flex-wrap: wrap;
 }
 
 /* Product Detail Page */
@@ -1607,5 +1596,44 @@ textarea.form-control {
     width: 100%;
     text-align: center;
     justify-content: center;
+  }
+
+  /* Product Catalog Cards on Mobile */
+  .product-card-large {
+    border-radius: var(--radius-lg);
+  }
+
+  .product-card-image {
+    height: 200px;
+  }
+
+  .product-card-body {
+    padding: 22px 18px;
+  }
+
+  .product-card-body h3 {
+    font-size: 21px;
+    margin-bottom: 8px;
+  }
+
+  .product-card-body p {
+    font-size: 14px;
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+
+  .product-card-actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .product-card-actions .btn {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    display: inline-flex;
+    padding: 12px 18px;
   }
 }
