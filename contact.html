@@ -5,8 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us | Primavex International Ltd</title>
   <meta name="description" content="Get in touch with Primavex International Ltd for export enquiries, bulk pricing quotes, custom packaging specifications, or trade partnerships.">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://primavex-website.vercel.app/contact.html">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Primavex International Ltd">
+  <meta property="og:title" content="Contact Us | Primavex International Ltd">
+  <meta property="og:description" content="Get in touch with Primavex International Ltd for export enquiries, bulk pricing quotes, custom packaging specifications, or trade partnerships.">
+  <meta property="og:url" content="https://primavex-website.vercel.app/contact.html">
+  <meta property="og:image" content="https://primavex-website.vercel.app/assets/images/hero-contact.jpg">
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contact Us | Primavex International Ltd">
+  <meta name="twitter:description" content="Get in touch with Primavex International Ltd for export enquiries, bulk pricing quotes, custom packaging specifications, or trade partnerships.">
+  <meta name="twitter:image" content="https://primavex-website.vercel.app/assets/images/hero-contact.jpg">
+
+  <!-- Favicon & Touch Icons -->
   <link rel="icon" type="image/png" href="assets/images/logo.png">
+  <link rel="apple-touch-icon" href="assets/images/logo.png">
+  <meta name="theme-color" content="#062852">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
@@ -73,7 +95,7 @@
     <!-- Contact & Enquiry Form Section (Pure White Page Background) -->
     <section class="section-padding bg-white">
       <div class="container">
-        <div class="form-page-split" style="grid-template-columns: 1fr 1.65fr;">
+        <div class="contact-page-split">
           <!-- Left: Black Contact Information Card -->
           <div class="contact-sidebar-black">
             <h3>Get in Touch</h3>
@@ -110,7 +132,7 @@
                 </div>
                 <div>
                   <div class="contact-label">WHATSAPP</div>
-                  <div class="contact-value"><a href="https://wa.me/2347025859652" target="_blank" rel="noopener">07025859652</a></div>
+                  <div class="contact-value"><a href="https://wa.me/2347025859652" target="_blank" rel="noopener noreferrer">07025859652</a></div>
                 </div>
               </li>
 
@@ -136,6 +158,12 @@
               <p class="form-note" style="margin-bottom: 24px;">Please fill in your details below and our team will get back to you promptly.</p>
 
               <form id="contact-enquiry-form" novalidate>
+                <!-- Security Honeypot Anti-Spam Field -->
+                <div style="display: none !important; opacity: 0; position: absolute; left: -9999px;" aria-hidden="true">
+                  <label for="contact_bot_check">Leave this blank</label>
+                  <input type="text" id="contact_bot_check" name="bot_check" tabindex="-1" autocomplete="off">
+                </div>
+
                 <div class="form-grid-2">
                   <div class="form-group" id="group-contact-name">
                     <label for="contact-name" class="form-label">Full Name <span class="required">*</span></label>
@@ -163,7 +191,7 @@
                   </div>
                 </div>
 
-                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin-bottom: 16px;">
+                <div class="form-grid-3">
                   <div class="form-group" id="group-contact-country">
                     <label for="contact-country" class="form-label">Country <span class="required">*</span></label>
                     <input type="text" id="contact-country" name="country" class="form-control" placeholder="Your country" required>
@@ -223,7 +251,7 @@
               <p style="margin-bottom: 24px;">Thank you for contacting Primavex International Ltd. Our export team has received your message and will respond within 24 hours.</p>
               <div style="background: var(--warm-surface); border: 1px solid var(--border-color); border-radius: 12px; padding: 20px; text-align: left; margin-bottom: 24px;">
                 <p style="font-size: 13.5px; margin-bottom: 4px;"><strong>Direct WhatsApp Line:</strong></p>
-                <p style="font-size: 13.5px;"><a href="https://wa.me/2347025859652" target="_blank" rel="noopener" style="color: var(--primary-gold); font-weight: 600;">07025859652</a></p>
+                <p style="font-size: 13.5px;"><a href="https://wa.me/2347025859652" target="_blank" rel="noopener noreferrer" style="color: var(--primary-gold); font-weight: 600;">07025859652</a></p>
               </div>
               <button type="button" class="btn btn-outline-navy" onclick="location.reload();">Send Another Message</button>
             </div>
@@ -282,7 +310,7 @@
               <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
               </svg>
-              <a href="https://wa.me/2347025859652" target="_blank" rel="noopener">07025859652</a>
+              <a href="https://wa.me/2347025859652" target="_blank" rel="noopener noreferrer">07025859652</a>
             </li>
             <li class="footer-contact-item">
               <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
