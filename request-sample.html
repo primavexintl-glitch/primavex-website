@@ -5,8 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Request a Sample | Primavex International Ltd</title>
   <meta name="description" content="Request a free product sample of Nigerian Cocoa, Sesame, Coffee, or Hibiscus to evaluate quality before placing your bulk order.">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://primavex-website.vercel.app/request-sample.html">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Primavex International Ltd">
+  <meta property="og:title" content="Request a Sample | Primavex International Ltd">
+  <meta property="og:description" content="Request a free product sample of Nigerian Cocoa, Sesame, Coffee, or Hibiscus to evaluate quality before placing your bulk order.">
+  <meta property="og:url" content="https://primavex-website.vercel.app/request-sample.html">
+  <meta property="og:image" content="https://primavex-website.vercel.app/assets/images/hero-sample.jpg">
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Request a Sample | Primavex International Ltd">
+  <meta name="twitter:description" content="Request a free product sample of Nigerian Cocoa, Sesame, Coffee, or Hibiscus to evaluate quality before placing your bulk order.">
+  <meta name="twitter:image" content="https://primavex-website.vercel.app/assets/images/hero-sample.jpg">
+
+  <!-- Favicon & Touch Icons -->
   <link rel="icon" type="image/png" href="assets/images/logo.png">
+  <link rel="apple-touch-icon" href="assets/images/logo.png">
+  <meta name="theme-color" content="#062852">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
@@ -82,6 +104,12 @@
               <p class="form-note">All fields marked <span class="required">*</span> are required.</p>
 
               <form id="sample-request-form" novalidate>
+                <!-- Security Honeypot Anti-Spam Field -->
+                <div style="display: none !important; opacity: 0; position: absolute; left: -9999px;" aria-hidden="true">
+                  <label for="sample_bot_check">Leave this blank</label>
+                  <input type="text" id="sample_bot_check" name="bot_check" tabindex="-1" autocomplete="off">
+                </div>
+
                 <div class="form-grid-2">
                   <div class="form-group" id="group-fullname">
                     <label for="fullname" class="form-label">Full Name <span class="required">*</span></label>
@@ -176,7 +204,7 @@
               <p style="margin-bottom: 24px;">Thank you for requesting a sample. Our sourcing and export team will review your specifications and get in touch within 24 hours to confirm dispatch details.</p>
               <div style="background: var(--warm-surface); border: 1px solid var(--border-color); border-radius: 12px; padding: 20px; text-align: left; margin-bottom: 24px;">
                 <p style="font-size: 13.5px; margin-bottom: 4px;"><strong>Need immediate assistance?</strong></p>
-                <p style="font-size: 13.5px;">Contact our desk on WhatsApp: <a href="https://wa.me/2347025859652" target="_blank" rel="noopener" style="color: var(--primary-gold); font-weight: 600;">07025859652</a></p>
+                <p style="font-size: 13.5px;">Contact our desk on WhatsApp: <a href="https://wa.me/2347025859652" target="_blank" rel="noopener noreferrer" style="color: var(--primary-gold); font-weight: 600;">07025859652</a></p>
               </div>
               <button type="button" class="btn btn-outline-navy" onclick="location.reload();">Submit Another Request</button>
             </div>
@@ -283,7 +311,7 @@
               <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
               </svg>
-              <a href="https://wa.me/2347025859652" target="_blank" rel="noopener">07025859652</a>
+              <a href="https://wa.me/2347025859652" target="_blank" rel="noopener noreferrer">07025859652</a>
             </li>
             <li class="footer-contact-item">
               <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
