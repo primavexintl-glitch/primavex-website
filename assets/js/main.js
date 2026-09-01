@@ -97,6 +97,19 @@ document.addEventListener('DOMContentLoaded', () => {
     checkContactConditionals();
   }
 
+  // Helper: Sanitize string to prevent XSS / malicious injection
+  const sanitizeText = (str) => {
+    if (!str) return '';
+    return String(str)
+      .replace(/[<>]/g, '')
+      .trim();
+  };
+
+  // Helper: RFC 5322 standard email validation
+  const isValidEmail = (email) => {
+    return /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$/.test(email);
+  };
+
   // 5. Sample Request Form Validation & Submission
   const sampleForm = document.getElementById('sample-request-form');
   const sampleFormWrapper = document.getElementById('sample-form-wrapper');
@@ -105,6 +118,14 @@ document.addEventListener('DOMContentLoaded', () => {
   if (sampleForm) {
     sampleForm.addEventListener('submit', (e) => {
       e.preventDefault();
+
+      // Security Honeypot Anti-Spam Check
+      const botCheck = sampleForm.querySelector('input[name="bot_check"]');
+      if (botCheck && botCheck.value.trim() !== '') {
+        // Silently drop bot submission
+        return;
+      }
+
       let isValid = true;
 
       // Required fields
@@ -118,11 +139,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
       requiredInputs.forEach(({ el, group, isEmail }) => {
         if (!el || !group) return;
-        const val = el.value.trim();
+        const val = sanitizeText(el.value);
         let fieldValid = val.length > 0;
 
         if (isEmail && fieldValid) {
-          fieldValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);
+          fieldValid = isValidEmail(val);
         }
 
         if (!fieldValid) {
@@ -137,7 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Check conditional unlisted product field if active
       if (sampleProductSelect && sampleProductSelect.value === 'other' && unlistedInput) {
-        if (!unlistedInput.value.trim()) {
+        if (!sanitizeText(unlistedInput.value)) {
           unlistedInput.classList.add('error');
           isValid = false;
         } else {
@@ -146,7 +167,12 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       if (isValid) {
-        // Mock successful submission
+        const submitBtn = sampleForm.querySelector('button[type="submit"]');
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Processing...';
+        }
+
         sampleFormWrapper.style.display = 'none';
         sampleSuccessCard.classList.add('active');
         sampleSuccessCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -162,6 +188,14 @@ document.addEventListener('DOMContentLoaded', () => {
   if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
+
+      // Security Honeypot Anti-Spam Check
+      const botCheck = contactForm.querySelector('input[name="bot_check"]');
+      if (botCheck && botCheck.value.trim() !== '') {
+        // Silently drop bot submission
+        return;
+      }
+
       let isValid = true;
 
       const requiredContactInputs = [
@@ -174,11 +208,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
       requiredContactInputs.forEach(({ el, group, isEmail }) => {
         if (!el || !group) return;
-        const val = el.value.trim();
+        const val = sanitizeText(el.value);
         let fieldValid = val.length > 0;
 
         if (isEmail && fieldValid) {
-          fieldValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);
+          fieldValid = isValidEmail(val);
         }
 
         if (!fieldValid) {
@@ -192,6 +226,12 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       if (isValid) {
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Processing...';
+        }
+
         contactFormWrapper.style.display = 'none';
         contactSuccessCard.classList.add('active');
         contactSuccessCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
